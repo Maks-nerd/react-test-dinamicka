@@ -1,4 +1,5 @@
 // Модули
+import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -70,6 +71,12 @@ const FrequencyStatistic = ({ letters, handleSort, handleSortByLetter }) => {
       <Bar className="mt-5" data={data} />
     </>
   );
+};
+
+FrequencyStatistic.propTypes = {
+  letters: PropTypes.array.isRequired,
+  handleSort: PropTypes.func.isRequired,
+  handleSortByLetter: PropTypes.func.isRequired,
 };
 
 export default FrequencyStatistic;

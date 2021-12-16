@@ -13,15 +13,18 @@ const Frequency = () => {
 
   useEffect(() => {
     const textLocalStorage = localStorage.getItem('text', text);
-    setText(textLocalStorage);
-    const addIdInLettersObjects = hadleChangeTextArea(
-      textLocalStorage.replace(/[^a-zA-Z0-9]/g, ''),
-    );
 
-    hadleChange(
-      textLocalStorage.replace(/[^a-zA-Z0-9]/g, ''),
-      addIdInLettersObjects,
-    );
+    if (textLocalStorage) {
+      setText(textLocalStorage);
+      const addIdInLettersObjects = hadleChangeTextArea(
+        textLocalStorage.replace(/[^a-zA-Z0-9]/g, ''),
+      );
+
+      hadleChange(
+        textLocalStorage.replace(/[^a-zA-Z0-9]/g, ''),
+        addIdInLettersObjects,
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -72,11 +75,8 @@ const Frequency = () => {
     hadleChange(cleanText, addIdInLettersObjects);
   };
 
-  const hadleChange = (cleanText, addIdInLettersObjects) => {
+  const hadleChange = (cleanText, addIdInLettersObjects) =>
     setLeters(prevSymbols => [...addIdInLettersObjects]);
-    handleSort('count')
-    setChangeSort(false);
-  };
 
   const handleSort = sort => {
     setChangeSort(prevState => !prevState);

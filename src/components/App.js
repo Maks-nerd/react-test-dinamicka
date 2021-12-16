@@ -4,11 +4,8 @@ import Frequency from './Frequency';
 
 // Компоненты
 
-
 function App() {
-  return (
-    <Frequency />
-  );
+  return <Frequency />;
 }
 
 export default App;
