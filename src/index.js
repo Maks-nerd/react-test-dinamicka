@@ -1,10 +1,19 @@
+// Модули
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+// Компоненты
+import App from './components/App';
+import Container from './components/Container';
+
+// Стили
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Container>
+      <App />
+    </Container>
   </React.StrictMode>,
   document.getElementById('root')
 );
